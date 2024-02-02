@@ -3,15 +3,20 @@ import { useSprings, animated, to as interpolate } from '@react-spring/web'
 import { useDrag } from 'react-use-gesture'
 
 import styles from './styles.module.css'
+import Card from './Card'
+import topics from './topics'
 
-const cards = [
-  'https://upload.wikimedia.org/wikipedia/commons/f/f5/RWS_Tarot_08_Strength.jpg',
-  'https://upload.wikimedia.org/wikipedia/commons/5/53/RWS_Tarot_16_Tower.jpg',
-  'https://upload.wikimedia.org/wikipedia/commons/9/9b/RWS_Tarot_07_Chariot.jpg',
-  'https://upload.wikimedia.org/wikipedia/commons/d/db/RWS_Tarot_06_Lovers.jpg',
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/RWS_Tarot_02_High_Priestess.jpg/690px-RWS_Tarot_02_High_Priestess.jpg',
-  'https://upload.wikimedia.org/wikipedia/commons/d/de/RWS_Tarot_01_Magician.jpg',
-]
+const colors = [
+  '#f9546b',
+  '#f5c31a',
+  '#42cfca',
+  '#f5c',
+  '#3560ff',
+  '#c0c0c0',
+];
+
+// randomize topics array
+topics.sort(() => Math.random() - 0.5);
 
 // These two are just helpers, they curate spring data, values that are later being interpolated into css
 const to = (i) => ({
@@ -28,7 +33,7 @@ const trans = (r, s) =>
 
 function Deck() {
   const [gone] = useState(() => new Set()) // The set flags all the cards that are flicked out
-  const [props, api] = useSprings(cards.length, i => ({
+  const [props, api] = useSprings(topics.length, i => ({
     ...to(i),
     from: from(i),
   })) // Create a bunch of springs using the helpers above
@@ -51,7 +56,7 @@ function Deck() {
         config: { friction: 50, tension: down ? 800 : isGone ? 200 : 500 },
       }
     })
-    if (!down && gone.size === cards.length)
+    if (!down && gone.size === topics.length)
       setTimeout(() => {
         gone.clear()
         api.start(i => to(i))
@@ -67,9 +72,15 @@ function Deck() {
             {...bind(i)}
             style={{
               transform: interpolate([rot, scale], trans),
-              backgroundImage: `url(${cards[i]})`,
+              backgroundColor: colors[i%(colors.length)],
+              // backgroundImage: `url(${cards[i]})`,
             }}
-          />
+          >
+            <Card
+              heading={topics[i].heading}
+              content={topics[i].content}
+            />
+          </animated.div>
         </animated.div>
       ))}
     </>
