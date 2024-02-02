@@ -77,6 +77,11 @@ function Deck() {
   // Now we're just mapping the animated values to our view, that's it. Btw, this component only renders once. :-)
   return (
     <>
+      <a style={{
+        position: 'absolute',
+        bottom: '10px',
+        right: '10px',
+      }} href='https://www.linkedin.com/in/aditya-kumar-singh-a8b584106/' target='_blank' rel='noreferrer' >#happycoding ❤️</a>
       {props.map(({ x, y, rot, scale }, i) => (
         <animated.div className={styles.deck} key={i} style={{ x, y }}>
           {/* This is the card itself, we're binding our gesture to it (and inject its index so we know which is which) */}
