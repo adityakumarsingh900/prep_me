@@ -17,6 +17,11 @@ const colors = [
 
 // randomize topics array
 topics.sort(() => Math.random() - 0.5);
+const paginatedTopics = [];
+// devide topics into sub arrays. Each array cann have 12 topics.
+while (topics.length > 0) {
+  paginatedTopics.push(topics.splice(0, 7));
+}
 
 // These two are just helpers, they curate spring data, values that are later being interpolated into css
 const to = (i) => ({
@@ -32,8 +37,9 @@ const trans = (r, s) =>
   `perspective(1500px) rotateX(30deg) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`
 
 function Deck() {
+  const [currentDeck, setCurrentDeck] = useState(0);
   const [gone] = useState(() => new Set()) // The set flags all the cards that are flicked out
-  const [props, api] = useSprings(topics.length, i => ({
+  const [props, api] = useSprings(paginatedTopics[currentDeck].length, i => ({
     ...to(i),
     from: from(i),
   })) // Create a bunch of springs using the helpers above
@@ -56,9 +62,15 @@ function Deck() {
         config: { friction: 50, tension: down ? 800 : isGone ? 200 : 500 },
       }
     })
-    if (!down && gone.size === topics.length)
+    if (!down && gone.size === paginatedTopics[currentDeck].length)
       setTimeout(() => {
-        gone.clear()
+        gone.clear();
+        setCurrentDeck((o) => {
+          if (o === paginatedTopics.length - 1) {
+            return 0;
+          }
+          return o + 1;
+        });
         api.start(i => to(i))
       }, 600)
   })
@@ -77,8 +89,8 @@ function Deck() {
             }}
           >
             <Card
-              heading={topics[i].heading}
-              content={topics[i].content}
+              heading={paginatedTopics[currentDeck][i].heading}
+              content={paginatedTopics[currentDeck][i].content}
             />
           </animated.div>
         </animated.div>
