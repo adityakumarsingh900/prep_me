@@ -1,0 +1,41 @@
+<div>
+  <strong>Debounce</strong>
+  <pre><code>
+    function debounce(func, wait) {
+      var timeout;
+  
+      return function executedFunction() {
+          var context = this;
+          var args = arguments;
+          
+          var later = function() {
+              timeout = null;
+              func.apply(context, args);
+          };
+  
+          clearTimeout(timeout);
+          timeout = setTimeout(later, wait);
+      };
+  };
+  </code></pre>
+  <br />
+  <strong>Throttle</strong>
+  <pre><code>
+    function throttle(func, limit) {
+      var inThrottle;
+  
+      return function executedFunction() {
+          var context = this;
+          var args = arguments;
+          
+          if (!inThrottle) {
+              func.apply(context, args);
+              inThrottle = true;
+  
+              setTimeout(function() {
+                  inThrottle = false;
+              }, limit);
+          }
+      };
+  };
+</div>

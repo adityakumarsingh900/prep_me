@@ -293,6 +293,102 @@ const topics = [
       'Mixins: (@mixin & @include) allows you to define styles that can be re-used throughout your stylesheet.'
     ],
     hasMore: true
+  },
+  {
+    id: 'debounce_throttle',
+    heading: 'What are debounce and throttle?',
+    content: [
+      'Debounce: delays the execution of a function until after some time has passed since the last time it was invoked.',
+      'Throttle: limits the number of times a function can be called over time.'
+    ],
+    hasMore: true
+  },
+  {
+    id: 'web_vitals',
+    heading: 'What are Web Vitals?',
+    content: [
+      'Web Vitals are used to measure performance such as loading time, interactivity, and visual stability.',
+      'Largest Contentful Paint',
+      'First Input Delay',
+      'Cumulative Layout Shift.'
+    ],
+  },
+  {
+    id: 'crp',
+    heading: 'What is Critical Rendering Path (CRP)?',
+    content: [
+      'CRP is the sequence of steps the browser goes through to convert the HTML, CSS, and JavaScript into pixels on the screen.',
+      'It consists of the following stages:',
+      'Parsing HTML to construct the DOM',
+      'Render tree construction: render tree is created by combining the DOM tree and the CSSOM ',
+      'Layout',
+      'Painting'
+    ],
+  },
+  {
+    id: 'rendering_patterns',
+    heading: 'What are the different rendering patterns in frontend?',
+    content: [
+      'Server-Side Rendering (SSR)',
+      'Client-Side Rendering (CSR)',
+      'Static Site Generation (SSG)',
+      'Pre-rendering',
+      'Hydrating'
+    ],
+  },
+  {
+    id: 'responsive_design',
+    heading: 'How do you mantain responsive design?',
+    content: [
+      'Fluid Grids',
+      'Relative unit for sizing',
+      'Media Queries',
+      'Mobile First'
+    ],
+  },
+  {
+    id: 'cross_browser',
+    heading: 'How do you handle cross-browser compatibility?',
+    content: [
+      'Avoid browser specific CSS properties',
+      'Polyfills',
+      'Testing'
+    ],
+  },
+  {
+    id: 'ssr',
+    heading: 'How Server-Side Rendering (SSR) works?',
+    content: [
+      'User makes a request',
+      'Server generates HTML: fetches data, renders the page.',
+      'Server sends HTML response',
+      'Client receives HTML',
+      'Client downloads JS (background)',
+      'Client hydrates the HTML with JS'
+    ]
+  },
+  {
+    id: 'cors',
+    heading: 'Explain Cross-Origin Resource Sharing (CORS)',
+    content: [
+      'CORS is a security feature that restricts resources from being requested from a different domain.',
+      'It is enforced by the browser.',
+      'OPTIONS request is sent to the server to check if the server allows the request.',
+      'Server response with the below headers:',
+      'Access-Control-Allow-Origin',
+      'Access-Control-Allow-Methods',
+      'Access-Control-Allow-Headers'
+    ],
+  },
+  {
+    id: 'web_secuties',
+    heading: 'What are the different web security threats and their preventions?',
+    content: [
+      'Cross-Site Scripting (XSS) - sanitize user input/dynamic html, use Content Security Policy (CSP)',
+      'Cross-Site Request Forgery (CSRF) - use anti-CSRF tokens and same-site cookies.',
+      'Man-in-the-Middle (MitM) - use HTTPS and secure cookies.',
+      'Sensitive Data Exposure - encrypt sensitive data, use secure cookies.',
+    ]
   }
 ];
 
