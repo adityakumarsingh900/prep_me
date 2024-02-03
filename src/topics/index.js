@@ -206,6 +206,27 @@ const topics = [
       'It is often used to render modals, tooltips, and popovers.',
       'Eg - ReactDOM.createPortal(htmlNode, document.body)',
     ]
+  },
+  {
+    id: 'genrators',
+    heading: 'What are genrator functons in JavaScript?',
+    content: [
+      'A generator is a special type of function that can be paused and resumed.',
+      'It is created using a function* declaration.',
+      'It returns an iterator object with the next() method.'
+    ]
+  },
+  {
+    id: 'reconcilation_algo',
+    heading: 'Explain React\'s reconciliation algorithm?',
+    content: [
+      'Reconciliation is the process of updating the DOM to match the React elements.',
+      'Same Root Element: updates the existing tree.',
+      'Different Root Element: tears down the old tree and builds new tree.',
+      'Recursion on Children: uses keys to match children.',
+      'Same Component: instance is kept and its state is updated. If not, a new instance is created.'
+    ],
+    hasMore: true
   }
 ];
 

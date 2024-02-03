@@ -1,0 +1,58 @@
+<div>
+  <strong>Same Root Element Type</strong>
+
+  <pre><code>
+    // Old output
+    &lt;div className="old"&gt;Hello&lt;/div&gt;
+
+    // New output
+    &lt;div className="new"&gt;Hello&lt;/div&gt;
+
+    // React will update the class of the existing div instead of creating a new
+    one.
+  </code></pre>
+
+  <strong>Different Root Element Types</strong>
+
+  <pre><code>
+    // Old output
+    &lt;div&gt;Hello&lt;/div&gt;
+
+    // New output
+    &lt;span&gt;Hello&lt;/span&gt;
+
+    // React will replace the entire div with a new span.
+  </code></pre>
+
+  <strong>on Children</strong>
+
+  <pre><code>
+    // Old output
+    &lt;ul&gt;
+      &lt;li key="1"&gt;Item 1&lt;/li&gt;
+      &lt;li key="2"&gt;Item 2&lt;/li&gt;
+    &lt;/ul&gt;
+
+    // New output
+    &lt;ul&gt;
+      &lt;li key="1"&gt;Item 1&lt;/li&gt;
+      &lt;li key="2"&gt;Item 2&lt;/li&gt;
+      &lt;li key="3"&gt;Item 3&lt;/li&gt;
+    &lt;/ul&gt;
+
+    // React will add a new li for Item 3, instead of recreating the entire
+    list.
+  </code></pre>
+
+  <strong>Same Component Type</strong>
+
+  <pre><code>
+    // Old output
+    &lt;MyComponent key="1" prop="old" /&gt;
+
+    // New output
+    &lt;MyComponent key="1" prop="new" /&gt;
+
+    // React will keep the MyComponent instance and update its prop.
+  </code></pre>
+</div>
