@@ -62,13 +62,14 @@ const topics = [
     ]
   },
   {
-    id: '10',
+    id: 'hoisting',
     heading: 'Explain the concept of "hoisting"',
     content:[
       'variable and function declarations are moved to the top of their containing scope during the compilation phase.',
       'It ONLY declares it NOT initializes it.',
       'It ONLY works for var & functions keywords.'
-    ]
+    ],
+    hasMore: true
   },
   {
     id: '11',
@@ -144,7 +145,8 @@ const topics = [
       'Promise.all([]): when all promises are reolved. If any promise is rejected, the resulting promise is rejected',
       'Promise.allSettled([]): when all promises are settled (either resolved or rejected).',
       'Promise.race([]): returns any promise that resolves first.'
-    ]
+    ],
+    hasMore: true
   },
   {
     id: 'HOC_components_react',
@@ -176,7 +178,8 @@ const topics = [
     content: [
       'call() and apply() are used to invoke a function with a specific context. apply() accepts an array of arguments.',
       'bind() returns a new function with the specified context and parameters.'
-    ]
+    ],
+    hasMore: true
   },
   {
     id: 'react_synthetic_events',
@@ -214,7 +217,8 @@ const topics = [
       'A generator is a special type of function that can be paused and resumed.',
       'It is created using a function* declaration.',
       'It returns an iterator object with the next() method.'
-    ]
+    ],
+    hasMore: true
   },
   {
     id: 'reconcilation_algo',
@@ -225,6 +229,68 @@ const topics = [
       'Different Root Element: tears down the old tree and builds new tree.',
       'Recursion on Children: uses keys to match children.',
       'Same Component: instance is kept and its state is updated. If not, a new instance is created.'
+    ],
+    hasMore: true
+  },
+  {
+    id: 'preventDefault_stopPropagation_and_stopImmediatePropagation',
+    heading: 'Difference between preventDefault, stopPropagation, and stopImmediatePropagation?',
+    content: [
+      'preventDefault: prevents the default action of the event.',
+      'stopPropagation: prevents the event from bubbling up the DOM tree.',
+      'stopImmediatePropagation: prevents other listeners of the same event from being called.'
+    ],
+    hasMore: true
+  },
+  {
+    id: 'localStograge_cookies_seeion',
+    heading: 'Difference between localStorage, cookies, and sessionStorage?',
+    content: [
+      'localStorage: stores data with no expiration date. 5MB limit.',
+      'cookies: stores data that has an expiration date. Clears when the page is closed. 4KB limit.',
+      'sessionStorage: stores data for one session (data is lost when the browser tab is closed). 5MB limit.'
+    ],
+  },
+  {
+    id: 'react_re_rendring',
+    heading: 'How does React re-render a component?',
+    content: [
+      'State/Props Change',
+      'Invoke render()',
+      'Generate New Virtual DOM:',
+      'Reconciliation',
+      'Diffing Algorithm',
+      'Component Updates methods',
+      'Batching'
+    ],
+    hasMore: true
+  },
+  {
+    id: 'Differential_Bundling',
+    heading: 'What is Differential Bundling?',
+    content: [
+      'Technique used to deliver different JavaScript bundles to different devices based on their capabilities.',
+      'Bundler analyzes your code and identifies features that might not be supported by older browsers.',
+      'It then generates a separate bundle for these features and loads them only when needed.',
+      'When a user visits your website, the browser sends information about its capabilities',
+      'The server then sends the appropriate bundle based on this information.'
+    ],
+  },
+  {
+    id: 'webpack_parcel_vite',
+    heading: 'Difference between Webpack, Parcel, and Vite?',
+    content: [
+      'Webpack: highly configurable and rich plugin ecosystem.',
+      'Parcel: zero-config, fast to start, and easy to use.',
+      'Vite: leverages modern browser features, fast to start, and supports hot module replacement (HMR).'
+    ],
+  },
+  {
+    id: 'sass_inheritance_mixins',
+    heading: 'Breif about Sass - inheritance & mixing',
+    content: [
+      'Inheritance: (@extend) allows a selector to inherit the styles of another selector.',
+      'Mixins: (@mixin & @include) allows you to define styles that can be re-used throughout your stylesheet.'
     ],
     hasMore: true
   }

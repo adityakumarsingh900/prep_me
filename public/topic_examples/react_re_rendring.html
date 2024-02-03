@@ -1,0 +1,39 @@
+<div>
+<strong>React Re-rendering</strong>
+<br />
+<br />
+<br />
+1. <strong>State/Props Change</strong>: The re-rendering process starts when there is a change in the component's state or props.
+<br />
+<br />
+
+2. <strong>Invoke render()</strong>: React invokes the <code>render()</code> method of the component. This method returns a new JSX (React elements), which describes what should be displayed on the screen.
+<br />
+<br />
+
+3. <strong>Generate New Virtual DOM</strong>: React then generates a new virtual DOM tree comprising of the returned JSX.
+<br />
+<br />
+
+4. <strong>Reconciliation</strong>: The reconciliation process begins. React compares the new virtual DOM tree with the current one.
+<br />
+<br />
+
+5. <strong>Diffing Algorithm</strong>: React uses a diffing algorithm to efficiently compare the old and new virtual DOMs. It goes through both trees, node by node, to identify any differences.
+<br />
+<br />
+
+6. <strong>Update Real DOM</strong>: If differences (or "diffs") are found, React updates only those parts in the real DOM. This selective updating is more efficient than repainting the entire DOM.
+<br />
+<br />
+
+7. <strong>Component Updates</strong>: If a component's props or state change, React will execute several lifecycle methods, such as <code>componentDidUpdate()</code>. These methods can be used to perform actions when the component updates.
+<br />
+<br />
+
+8. <strong>Batching</strong>: React batches multiple state updates into a single update for performance. This means that if multiple state updates are made in a single event handler, React will batch them into one update and re-render just once.
+<br />
+<br />
+
+<p>Remember, React's goal is to minimize updates to the real DOM because such operations are costly. By using a virtual DOM and reconciliation, React can limit the number of updates to the real DOM, leading to better performance.</p>
+</div>

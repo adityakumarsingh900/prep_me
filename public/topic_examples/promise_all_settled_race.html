@@ -1,0 +1,46 @@
+<div>
+  <strong>Promise.all()</strong>
+  <p>when all promises are resolved. If any promise is rejected, the resulting promise is rejected</p>
+  <pre><code>
+    const promise1 = Promise.resolve(3);
+    const promise2 = 42;
+    const promise3 = new Promise((resolve, reject) => {
+      setTimeout(resolve, 100, 'foo');
+    });
+
+    Promise.all([promise1, promise2, promise3]).then((values) => {
+      console.log(values); // expected output: Array [3, 42, "foo"]
+    });
+  </code></pre>
+  <br />
+  <strong>Promise.allSettled()</strong>
+  <p>when all promises are settled (either resolved or rejected)</p>
+  <pre><code>
+    const promise1 = Promise.resolve(3);
+    const promise2 = new Promise((resolve, reject) => setTimeout(reject, 100, 'foo'));
+
+    Promise.allSettled([promise1, promise2]).then((results) => {
+      console.log(results);
+      // expected output:
+      // [ { status: "fulfilled", value: 3 },
+      //  { status: "rejected", reason: "foo" }]
+    });
+  </code></pre>
+  <br />
+  <strong>Promise.race([])</strong>
+  <p>when the first promise is settled (either resolved or rejected)</p>
+  <pre><code>
+    const promise1 = new Promise((resolve, reject) => {
+      setTimeout(resolve, 500, 'one');
+    });
+    
+    const promise2 = new Promise((resolve, reject) => {
+      setTimeout(resolve, 100, 'two');
+    });
+    
+    Promise.race([promise1, promise2]).then((value) => {
+      console.log(value);
+      // expected output: "two"
+    });
+  </code></pre>
+</div>

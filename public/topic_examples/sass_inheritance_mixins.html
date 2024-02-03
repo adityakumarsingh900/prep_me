@@ -1,0 +1,30 @@
+<div>
+  <strong>Sass Inheritance</strong>
+  <pre><code class="language-scss">
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      color: white;
+      background-color: blue;
+    }
+    
+    .primary-button {
+      @extend .button;
+      background-color: green;
+    }
+  </code></pre>
+  <br />
+  <strong>Sass Mixins</strong>
+  <pre><code class="language-scss">
+    @mixin border-radius($radius) {
+      -webkit-border-radius: $radius;
+      -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+      border-radius: $radius;
+    }
+    
+    .button {
+      @include border-radius(10px);
+    }
+  </code></pre>
+</div>
