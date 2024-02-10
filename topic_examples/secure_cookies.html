@@ -1,0 +1,12 @@
+<div>
+  <strong>Secure Cookies</strong>
+  <p>you can set a secure cookie by appending ; Secure to the cookie string when you use document.cookie:</p>
+  <pre><code>
+    document.cookie = "name=value; Secure";
+  </code></pre>
+  <p>The Secure flag only works over HTTPS</p>
+  <p>The SameSite attribute is also recommended to prevent the cookie from being sent in cross-site requests, which can help to protect against CSRF attacks.</p>
+  <pre><code>
+    document.cookie = "name=value; SameSite=Strict";
+  </code></pre>
+</div>
