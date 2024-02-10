@@ -95,7 +95,8 @@ const topics = [
     heading: 'What are web sockets?',
     content: [
       'WebSockets provide a full-duplex communication channel between the client and the server, enabling real-time data exchange and reducing latency.'
-    ]
+    ],
+    hasMore: true
   },
   {
     id: 'tree_shaking',
@@ -418,6 +419,15 @@ const topics = [
       'JSON.parse(JSON.stringify(obj))',
       'Lodash.cloneDeep(obj)',
       'You can also write a custom function to deep clone an object.'
+    ],
+    hasMore: true
+  },
+  {
+    id: 'secure_cookies',
+    heading: 'What are secure and httpOnly cookies?',
+    content: [
+      'Secure: cookies are only sent over HTTPS.',
+      'HttpOnly: cookies are not accessible via JavaScript.'
     ],
     hasMore: true
   }
