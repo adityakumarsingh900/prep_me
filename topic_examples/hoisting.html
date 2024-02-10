@@ -1,23 +1,23 @@
 <div>
-<strong>Hoisting</strong>
-
-<pre><code>
-  console.log(num); // Outputs: undefined
-  console.log(myFunc); // Outputs: undefined
-  console.log(myFunc2()); // Outputs: "Hello, world!"
-  console.log(myFunc()); // Outputs: TypeError: myFunc is not a function
-
-  var num = 6;
-
-  var myFunc = function() {
-    return "Hello, world!";
-  };
-
-  function myFunc2() {
-      return "Hello, world!";
-  }
-
-  console.log(num); // Outputs: 6
-  console.log(myFunc()); // Outputs: "Hello, world!"
+  <strong>Variable Hoisting</strong>
+  <pre><code>
+  console.log(myVar); // Output: undefined
+  var myVar = 5;
+  console.log(myVar); // Output: 5
 </code></pre>
+
+  <strong>Function Hoisting</strong>
+  <pre><code>
+  console.log(myFunc()); // Output: "Hello, World!"
+  function myFunc() {
+    return "Hello, World!";
+  }
+</code></pre>
+
+  <strong>Let & Const Hoisting</strong>
+  <pre><code>
+    console.log(myLet); // Output: ReferenceError: Cannot access 'myLet' before initialization
+    let myLet = 5;
+    console.log(myLet); // Output: 5
+  </code></pre>
 </div>
