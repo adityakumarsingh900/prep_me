@@ -207,6 +207,7 @@ const topics = [
     content: [
       'A React portal is used to render children into a DOM node that exists outside the DOM hierarchy of the parent component.',
       'It is often used to render modals, tooltips, and popovers.',
+      'It can still access context provided by its ancestors, and its lifecycle methods are still tied to its parent component.',
       'Eg - ReactDOM.createPortal(htmlNode, document.body)',
     ]
   },
@@ -236,8 +237,8 @@ const topics = [
     id: 'preventDefault_stopPropagation_and_stopImmediatePropagation',
     heading: 'Difference between preventDefault, stopPropagation, and stopImmediatePropagation?',
     content: [
-      'preventDefault: prevents the default action of the event.',
-      'stopPropagation: prevents the event from bubbling up the DOM tree.',
+      'preventDefault: prevents default action.',
+      'stopPropagation: prevents event from bubbling.',
       'stopImmediatePropagation: prevents other listeners of the same event from being called.'
     ],
     hasMore: true
@@ -269,11 +270,11 @@ const topics = [
     id: 'Differential_Bundling',
     heading: 'What is Differential Bundling?',
     content: [
-      'Technique used to deliver different JavaScript bundles to different devices based on their capabilities.',
-      'Bundler analyzes your code and identifies features that might not be supported by older browsers.',
-      'It then generates a separate bundle for these features and loads them only when needed.',
-      'When a user visits your website, the browser sends information about its capabilities',
-      'The server then sends the appropriate bundle based on this information.'
+      'Technique used to deliver different JavaScript bundles to different devices.',
+      'Analyzes your code & identifies features that might not be supported by older browsers.',
+      'Generates a separate bundle for these features.',
+      'User visits your website, browser sends information about its capabilities',
+      'Server then sends the appropriate bundle based on this information.'
     ],
   },
   {
@@ -317,7 +318,7 @@ const topics = [
     id: 'crp',
     heading: 'What is Critical Rendering Path (CRP)?',
     content: [
-      'CRP is the sequence of steps the browser goes through to convert the HTML, CSS, and JavaScript into pixels on the screen.',
+      'Sequence of steps browser goes through to paint pixels on the screen.',
       'It consists of the following stages:',
       'Parsing HTML to construct the DOM',
       'Render tree construction: render tree is created by combining the DOM tree and the CSSOM ',
@@ -371,9 +372,9 @@ const topics = [
     id: 'cors',
     heading: 'Explain Cross-Origin Resource Sharing (CORS)',
     content: [
-      'CORS is a security feature that restricts resources from being requested from a different domain.',
-      'It is enforced by the browser.',
-      'OPTIONS request is sent to the server to check if the server allows the request.',
+      'Restricts resources from being requested from a different domain.',
+      'Enforced by the browser.',
+      'OPTIONS request is sent to the server to check.',
       'Server response with the below headers:',
       'Access-Control-Allow-Origin',
       'Access-Control-Allow-Methods',
@@ -389,6 +390,26 @@ const topics = [
       'Man-in-the-Middle (MitM) - use HTTPS and secure cookies.',
       'Sensitive Data Exposure - encrypt sensitive data, use secure cookies.',
     ]
+  },
+  {
+    id: 'profiling',
+    heading: 'How do you profile a web application?',
+    content: [
+      'Performance Profiling',
+      'Memory Profiling',
+      'Network Profiling',
+      'User Interaction Profiling'
+    ],
+  },
+  {
+    id: 'custom_hooks_usecase',
+    heading: 'What are the use cases for custom hooks?',
+    content: [
+      'Abstracting logic',
+      'Sharing logic',
+      'Composing logic'
+    ],
+    hasMore: true
   }
 ];
 
