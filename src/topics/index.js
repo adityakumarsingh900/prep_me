@@ -410,6 +410,16 @@ const topics = [
       'Composing logic'
     ],
     hasMore: true
+  },
+  {
+    id: 'deep_clone',
+    heading: 'How do you deep clone an object?',
+    content: [
+      'JSON.parse(JSON.stringify(obj))',
+      'Lodash.cloneDeep(obj)',
+      'You can also write a custom function to deep clone an object.'
+    ],
+    hasMore: true
   }
 ];
 

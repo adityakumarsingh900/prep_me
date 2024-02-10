@@ -1,0 +1,28 @@
+<div>
+  <strong>Deep Clone</strong>
+  <pre><code>
+    function deepCopy(obj) {
+      if (obj === null || typeof obj !== 'object') {
+          return obj;
+      }
+  
+      let copy;
+  
+      if (Array.isArray(obj)) {
+          copy = obj.slice(); // Copy array
+      } else if (obj instanceof Date) {
+          copy = new Date(obj);
+      } else if (obj instanceof RegExp) {
+          copy = new RegExp(obj);
+      } else {
+          copy = Object.assign({}, obj);
+      }
+  
+      Object.keys(copy).forEach((key) => {
+          copy[key] = deepCopy(copy[key], cache);
+      });
+  
+      return copy;
+    }
+  </code></pre>
+</div>
