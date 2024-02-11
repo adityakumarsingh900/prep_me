@@ -1,0 +1,29 @@
+<div>
+  <h1>Map and WeakMap Example</h1>
+  <h2>Map:</h2>
+  <p>A Map holds key-value pairs where the key can be any data type - not just strings, which is the case with regular JavaScript objects. The keys in a Map are ordered, meaning that the order in which keys were added to the Map is preserved.</p>
+  <h3>Example:</h3>
+  <pre><code>
+      let map = new Map();
+      map.set('name', 'John');
+      map.set(1, 'number one');
+      console.log(map.get('name')); // Outputs: 'John'
+      console.log(map.get(1)); // Outputs: 'number one'
+      console.log(map.size); // Outputs: 2
+  </code></pre>
+  <h2>WeakMap:</h2>
+  <p>A WeakMap is similar to a Map, but with some key differences:</p>
+  <ol>
+    <li>In a WeakMap, every key must be an object. Primitive data types as keys are not allowed.</li>
+    <li>WeakMap keys are weakly referenced. This means that if there are no other references to the object used as a key, it can be garbage collected. This makes WeakMap useful for creating private object properties.</li>
+    <li>WeakMap is not iterable and does not have a .size property, which means you cannot get the count of key-value pairs in a WeakMap.</li>
+  </ol>
+  <h3>Example:</h3>
+  <pre><code>
+      let weakmap = new WeakMap();
+      let obj = {};
+      weakmap.set(obj, 'John');
+      console.log(weakmap.get(obj)); // Outputs: 'John'
+  </code></pre>
+  <p>In this example, obj is used as a key in the WeakMap. If obj were to be set to null, the WeakMap would automatically remove the key-value pair because the key object is no longer referenced.</p>
+</div>
