@@ -145,7 +145,7 @@ const topics = [
     content: [
       'Promise.all([]): when all promises are reolved. If any promise is rejected, the resulting promise is rejected',
       'Promise.allSettled([]): when all promises are settled (either resolved or rejected).',
-      'Promise.race([]): returns any promise that resolves first.'
+      'Promise.race([]): returns any promise that settled first.'
     ],
     hasMore: true
   },
@@ -430,6 +430,54 @@ const topics = [
       'HttpOnly: cookies are not accessible via JavaScript.'
     ],
     hasMore: true
+  },
+  {
+    id: 'composition_currying',
+    heading: 'Explain function composition and currying',
+    content: [
+      'Function Composition: combining two or more functions to produce a new function.',
+      'Currying: transforming a function that takes multiple arguments into a sequence of functions that each take a single argument.'
+    ],
+    hasMore: true
+  },
+  {
+    id: 'async_defer',
+    heading: 'What is the difference between async and defer?',
+    content: [
+      'async: loads the script asynchronously and executes it as soon as it is available.',
+      'defer: loads the script asynchronously and executes it after the HTML document has been parsed.'
+    ]
+  },
+  {
+    id: 'set_weakset',
+    heading: 'What is the difference between Set and WeakSet?',
+    content: [
+      'Set: stores unique values of any type.',
+      'Set: has methods like has, add, delete, clear',
+      'WeakSet: stores weakly held objects. It can only store objects and is not iterable.',
+      "WeakSet doesn't prevent garbage collection of its elements."
+    ],
+  },
+  {
+    id: 'map_weakmap',
+    heading: 'What is the difference between Map and WeakMap?',
+    content: [
+      'Map: stores key-value pairs.',
+      'Map: has methods like get, set, has, delete, clear',
+      'WeakMap: stores weakly held key-value pairs. It can only store objects as keys and is not iterable.',
+      "WeakMap doesn't prevent garbage collection of its elements."
+    ],
+  },
+  {
+    id: 'event_loop',
+    heading: 'What is the event loop?',
+    content: [
+      'A mechanism that allows JS to perform non-blocking operations.',
+      'Stack Execution: all code on the call stack is executed.',
+      'Render Loop: requestAnimationFrame',
+      'Task Queue: setTimeout, setInterval, AJAX calls, or user events',
+      'Microtask Queue: Promises, Object.observe'
+    ],
   }
 ];
 

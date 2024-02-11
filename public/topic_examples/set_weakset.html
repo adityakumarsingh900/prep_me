@@ -1,0 +1,99 @@
+<div>
+  <p>
+    In ES6, <code>Set</code> is a new data object introduced which lets you
+    store unique values of any type, whether primitive values or object
+    references.
+  </p>
+
+  <p>Here are some key points about <code>Set</code>:</p>
+
+  <ol>
+    <li>
+      <strong>Uniqueness</strong>: Each value in the Set has to be unique. If
+      you try to add a duplicate value, it won't be added.
+    </li>
+    <li>
+      <strong>Any value type</strong>: You can store any type of value whether
+      primitive or object.
+    </li>
+  </ol>
+
+  <p>Here's a basic example of using a Set:</p>
+
+  <pre><code>let mySet = new Set();
+
+mySet.add(1); // Set [ 1 ]
+mySet.add(2); // Set [ 1, 2 ]
+mySet.add(3); // Set [ 1, 2, 3 ]
+mySet.add(2); // This won't be added as 2 is already present in the Set
+
+console.log(mySet.has(1)); // true
+console.log(mySet.has(4)); // false
+
+mySet.delete(2); // removes 2 from the set
+console.log(mySet.has(2)); // false
+</code></pre>
+
+  <p>
+    In addition to the <code>add</code>, <code>has</code>, and
+    <code>delete</code> methods, Sets also have a <code>size</code> property for
+    checking the number of items in the Set, and a <code>clear</code> method for
+    removing all items from the Set. They are also iterable, meaning you can
+    loop over them using methods like <code>for...of</code>.
+  </p>
+
+  <h1>WeakSet Example</h1>
+  <p>
+    <code>WeakSet</code> is a special kind of <code>Set</code> that does not
+    prevent JavaScript from garbage collecting its elements. Here are some key
+    points about <code>WeakSet</code>:
+  </p>
+  <ol>
+    <li>
+      <strong>Weak References:</strong> <code>WeakSet</code> holds "weak"
+      references to its elements. This means if there are no other references to
+      an object stored in the <code>WeakSet</code>, that object can be garbage
+      collected. This can be useful for managing memory usage.
+    </li>
+    <li>
+      <strong>Object Only:</strong> In a <code>WeakSet</code>, you can only
+      store objects. Primitive data types (like <code>number</code>,
+      <code>string</code>, <code>boolean</code>, etc.) are not allowed.
+    </li>
+    <li>
+      <strong>Not Iterable:</strong> <code>WeakSet</code> is not iterable, which
+      means it cannot be looped over. You also cannot clear all elements at once
+      or check the size of the <code>WeakSet</code>.
+    </li>
+  </ol>
+  <p>Here's a basic example of using a <code>WeakSet</code>:</p>
+  <pre><code>
+let myWeakSet = new WeakSet();
+
+let obj1 = { name: 'Object 1' };
+let obj2 = { name: 'Object 2' };
+
+myWeakSet.add(obj1);
+myWeakSet.add(obj2);
+
+console.log(myWeakSet.has(obj1)); // true
+console.log(myWeakSet.has(obj2)); // true
+
+obj1 = null; // remove reference to obj1
+
+console.log(myWeakSet.has(obj1)); // false
+  </code></pre>
+  <p>
+    In this example, after setting <code>obj1</code> to <code>null</code>, the
+    object it was originally pointing to becomes eligible for garbage
+    collection, because <code>myWeakSet</code> does not prevent garbage
+    collection of its elements.
+  </p>
+  <p>
+    The main difference between <code>Set</code> and <code>WeakSet</code> is
+    that <code>Set</code> holds "strong" references to its elements, preventing
+    them from being garbage collected, while <code>WeakSet</code> does not.
+    Also, <code>Set</code> can store any type of values and is iterable, while
+    <code>WeakSet</code> can only store objects and is not iterable.
+  </p>
+</div>

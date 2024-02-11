@@ -1,0 +1,25 @@
+<div>
+  <strong>Currying</strong>
+  <p>a function with multiple arguments is transformed into a sequence of functions</p>
+  <pre><code>
+    function multiply(a, b) {
+      return a * b;
+    }
+    
+    const curriedMultiply = (a) => (b) => a * b;
+    
+    const multiplyByTwo = curriedMultiply(2);
+    console.log(multiplyByTwo(3)); // Outputs: 6
+  </code></pre>
+
+  <strong>Composition</strong>
+  <p>combining two or more functions to produce a new function</p>
+  <pre><code>
+    const compose = (f, g) => (a) => f(g(a));
+    
+    const sum = (num) => num + 1;
+    const multiply = (num) => num * 2;
+    
+    const composed = compose(multiply, sum);
+    console.log(composed(2)); // Outputs: 6
+</div>
