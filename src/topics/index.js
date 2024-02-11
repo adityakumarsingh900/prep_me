@@ -457,6 +457,7 @@ const topics = [
       'WeakSet: stores weakly held objects. It can only store objects and is not iterable.',
       "WeakSet doesn't prevent garbage collection of its elements."
     ],
+    hasMore: true
   },
   {
     id: 'map_weakmap',
@@ -467,6 +468,7 @@ const topics = [
       'WeakMap: stores weakly held key-value pairs. It can only store objects as keys and is not iterable.',
       "WeakMap doesn't prevent garbage collection of its elements."
     ],
+    hasMore: true
   },
   {
     id: 'event_loop',
