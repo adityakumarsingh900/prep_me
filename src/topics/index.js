@@ -310,9 +310,9 @@ const topics = [
     heading: 'What are Web Vitals?',
     content: [
       'Web Vitals are used to measure performance such as loading time, interactivity, and visual stability.',
-      'Largest Contentful Paint',
-      'First Input Delay',
-      'Cumulative Layout Shift.'
+      'Largest Contentful Paint (2.5s)',
+      'First Input Delay (100ms)',
+      'Cumulative Layout Shift. (0.1s)'
     ],
   },
   {
@@ -480,6 +480,30 @@ const topics = [
       'Task Queue: setTimeout, setInterval, AJAX calls, or user events',
       'Microtask Queue: Promises, Object.observe'
     ],
+  },
+  {
+    id: 'big_o_notation',
+    heading: 'How to identify complexity of your algorithm?',
+    content: [
+      'O(1): Constant time, operations don\'t depend on input size.',
+      'O(log n): Logarithmic time, operations grow slower than linearly.',
+      'O(n): Linear time, operations grow directly with input size.',
+      'O(n log n): Log-linear time, a combination of linear and logarithmic growth.',
+      'O(n^2): Quadratic time, operations grow quadratically with input size.',
+    ],
+  },
+  {
+    id: 'react_fiber',
+    heading: 'Explain React Fiber?',
+    content: [
+      'Identifying changes',
+      'Building a work queue',
+      'Prioritizing the queue',
+      'Incremental rendering',
+      'Reconciliation',
+      'Committing changes',
+    ],
+    hasMore: true
   }
 ];
 
