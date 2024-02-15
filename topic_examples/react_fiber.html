@@ -1,0 +1,34 @@
+<div>
+  <h1>React Fiber</h1>
+  <h2>What it is:</h2>
+  <ul>
+    <li>React Fiber is a complete rewrite of the core algorithm in React, introduced in version 16.</li>
+    <li>A new reconciliation algorithm called the Fiber Reconciler.</li>
+    <li>Uses data structures called "fibers" to represent nodes in the virtual DOM.</li>
+  </ul>
+
+  <h2>What it does:</h2>
+  <ul>
+    <li>Enables incremental rendering: Splits rendering work into smaller chunks and spreads it over multiple frames for smoother updates.</li>
+    <li>Allows for pausing, resuming, or reusing rendering work as needed, ensuring responsiveness even during complex calculations.</li>
+    <li>Supports prioritizing updates based on their importance for a better user experience.</li>
+    <li>Lays the groundwork for future features like concurrency and error boundaries.</li>
+  </ul>
+
+  <h2>How it works:</h2>
+  <ol>
+    <li>Identifying changes: When there's a change in state or props, React schedules updates.</li>
+    <li>Building a work queue: Fiber creates a queue of "fibers" representing the affected components and their children.</li>
+    <li>Prioritizing the queue: Certain updates like user interactions might be prioritized for smoother performance.</li>
+    <li>Incremental rendering: Rendering happens in small chunks, allowing the browser to respond to other tasks in between.</li>
+    <li>Reconciliation: Fibers are compared to identify the minimal changes needed in the real DOM.</li>
+    <li>Committing changes: Only the necessary updates are applied to the DOM for efficient performance.</li>
+  </ol>
+
+  <h2>Benefits:</h2>
+  <ul>
+    <li>Improved performance: Smoother animations, faster updates, and better responsiveness.</li>
+    <li>Better user experience: Prioritized updates for a more interactive feel.</li>
+    <li>Foundation for future features: Opens doors for concurrency and advanced error handling.</li>
+  </ul>
+</div>
