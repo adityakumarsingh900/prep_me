@@ -218,7 +218,8 @@ const topics = [
     content: [
       'A generator is a special type of function that can be paused and resumed.',
       'It is created using a function* declaration.',
-      'It returns an iterator object with the next() method.'
+      'It returns an iterator object with the next() method that resumes the function\'s until the next yield statement.',
+      'The yield keyword is used to pause the function execution.'
     ],
     hasMore: true
   },
@@ -491,6 +492,7 @@ const topics = [
       'O(n log n): Log-linear time, a combination of linear and logarithmic growth.',
       'O(n^2): Quadratic time, operations grow quadratically with input size.',
     ],
+    hasMore: true,
   },
   {
     id: 'react_fiber',

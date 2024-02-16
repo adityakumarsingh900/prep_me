@@ -1,0 +1,78 @@
+<div>
+  <h1>Code Examples for Time Complexities</h1>
+
+  <h2>O(1): Constant Time</h2>
+  <pre><code>
+    function getFirstItem(array) {
+      return array[0];
+    }
+  </code></pre>
+
+  <h2>O(log n): Logarithmic Time</h2>
+  <pre><code>
+    function binarySearch(array, item) {
+      let low = 0;
+      let high = array.length - 1;
+
+      while (low <= high) {
+        let mid = Math.floor((low + high) / 2);
+        let guess = array[mid];
+
+        if (guess === item) {
+          return mid;
+        }
+
+        if (guess > item) {
+          high = mid - 1;
+        } else {
+          low = mid + 1;
+        }
+      }
+
+      return null;
+    }
+  </code></pre>
+
+  <h2>O(n): Linear Time</h2>
+  <pre><code>
+    function findItem(array, item) {
+      for (let i = 0; i < array.length; i++) {
+        if (array[i] === item) {
+          return i;
+        }
+      }
+
+      return -1;
+    }
+  </code></pre>
+
+  <h2>O(n log n): Log-linear Time</h2>
+  <pre><code>
+    function quickSort(array) {
+      if (array.length < 2) {
+        return array;
+      }
+
+      let pivot = array[0];
+      let lesser = array.slice(1).filter(item => item < pivot);
+      let greater = array.slice(1).filter(item => item > pivot);
+
+      return [...quickSort(lesser), pivot, ...quickSort(greater)];
+    }
+  </code></pre>
+
+  <h2>O(n^2): Quadratic Time</h2>
+  <pre><code>
+    function bubbleSort(array) {
+      for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < array.length - 1; j++) {
+          if (array[j] > array[j + 1]) {
+            [array[j], array[j + 1]] = [array[j + 1], array[j]];
+          }
+        }
+      }
+
+      return array;
+    }
+  </code></pre>
+</div>
