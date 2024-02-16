@@ -2,16 +2,18 @@
   <strong>Generators</strong>
   <p>Generators are functions that can be exited and later re-entered. Their context (variable bindings) will be saved across re-entrances. This allows us to produce a sequence of results instead of a single value.</p>
   <pre><code>
-    function* generator(i) {
-      yield i;
-      yield i + 10;
+    function* idGenerator() {
+      let id = 0;
+      while (true) {
+        yield id++;
+      }
     }
-
-    const gen = generator(10);
-
-    console.log(gen.next().value);
-    // expected output: 10
-    console.log(gen.next().value);
-    // expected output: 20
+    
+    const gen = idGenerator();
+    
+    console.log(gen.next().value); // 0
+    console.log(gen.next().value); // 1
+    console.log(gen.next().value); // 2
+    // ... and so on
   </code></pre>
 </div>
