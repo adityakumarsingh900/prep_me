@@ -506,6 +506,105 @@ const topics = [
       'Committing changes',
     ],
     hasMore: true
+  },
+  {
+    id: 'load_diff_images_HTML',
+    heading: 'load different size images using only HTML CSS',
+    content: [
+      '<picture>',
+      '<source media="(max-width: 767px)" srcset="small.jpg">',
+      '<source media="(min-width: 768px)" srcset="large.jpg">',
+      '<img src="fallback.jpg" alt="Image">',
+      '</picture>',
+    ]
+  },
+  {
+    id: 'request_lifecycle',
+    heading: 'Explain the lifecycle of a request',
+    content: [
+      'Client Sends a Request: URL, HTTP Method, Headers, Body',
+      'Server Processes the Request: Routing, Auth, Business Logic',
+      'Server Generates a Response: HTML, JSON, or other types of data.',
+      'Server Sends the Response:  along with HTTP codes and other info.',
+      'Client Receives the Response',
+    ],
+  },
+  {
+    id: 'js_in_browser',
+    heading: 'How does JavaScript work in the browser?',
+    content: [
+      'Does when <script> encounters',
+      'Parsing: convert to AST',
+      'Compilation: convert to machine code (JIT)',
+      'Execution: run the code',
+      'Garbage Collection: remove unused memory',
+    ]
+  },
+  {
+    id: 'preconnect',
+    heading: 'What is preconnect?',
+    content: [
+      'Preconnect is used to set up early connections before an HTTP request is actually sent.',
+      'It is used to reduce the time it takes to set up a connection.',
+      '<link rel="preconnect" href="https://example.com">'
+    ]
+  },
+  {
+    id: 'css_specificity',
+    heading: 'What is CSS specificity?',
+    content: [
+      'Specificity is a set of rules that determines which CSS property values are applied to an element.',
+      'It is based on the number of ID selectors, class selectors, and type selectors.',
+      'Inline styles have the highest specificity.',
+      '!important overrides all other rules.'
+    ],
+    hasMore: true
+  },
+  {
+    id: 'scopechain',
+    heading: 'What is the scope chain in JS?',
+    content: [
+      'It\'s the order in which the JavaScript engine looks for variables in the code.',
+      'stores variables and function declarations',
+      'it starts with the innermost scope and moves outwards until it either finds the variable or reaches the global scope.'
+    ],
+  },
+  {
+    id: 'es6',
+    heading: 'What are some new features in ES6?',
+    content: [
+      'let and const',
+      'Arrow functions',
+      'Template literals',
+      'Destructuring & Spread Operato',
+      'Classes',
+      'Modules'
+    ],
+  },
+  {
+    id: 'error_types',
+    heading: 'What are the different types of errors in JS?',
+    content: [
+      'SyntaxError: invalid syntax',
+      'ReferenceError: invalid reference',
+      'TypeError: invalid type',
+      'RangeError: invalid range',
+      'URIError: encoding/decoding error',
+      'EvalError: eval() function error'
+    ],
+  },
+  {
+    id: 'dry_solid',
+    heading: 'Explain DRY & SOLID priciples.',
+    content: [
+      'DRY: Don\'t Repeat Yourself',
+      'S: Single Responsibility Principle',
+      'O: Open/Closed Principle',
+      'L: Liskov Substitution Principle',
+      'I: Interface Segregation Principle',
+      'D: Dependency Inversion Principle'
+    ],
+    hasMore: true,
   }
 ];
 
