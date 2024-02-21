@@ -1,0 +1,20 @@
+<div>
+  <h1>CSS Specificity</h1>
+  <p>Specificity is calculated based on a rule set's component parts:</p>
+  <ol>
+    <li><strong>Inline styles</strong>: An inline style is attached directly to the element to be styled. Example: <code>&lt;h1 style="color: #ffffff;"&gt;</code>.</li>
+    <li><strong>IDs</strong>: An ID is a unique identifier for the page elements, such as <code>#navbar</code>.</li>
+    <li><strong>Classes, attributes and pseudo-classes</strong>: This category includes .classes, [attributes] and pseudo-classes such as <code>:hover</code>, <code>:focus</code> etc.</li>
+    <li><strong>Elements and pseudo-elements</strong>: This includes element names and pseudo-elements, such as <code>h1</code>, <code>div</code>, <code>::before</code> and <code>::after</code>.</li>
+  </ol>
+  <p>When multiple rules apply to the same element and have the same importance (i.e., none are marked as <code>!important</code>), the browser breaks the tie using specificity. The rule with the highest specificity is applied.</p>
+  <p>If two rules have the same specificity, the one that comes last in the CSS document is the one that will be applied.</p>
+  <p>Specificity is usually represented by four numbers (a, b, c, d):</p>
+  <ul>
+    <li><code>a</code> counts the number of <code>!important</code> declarations</li>
+    <li><code>b</code> counts the number of ID selectors</li>
+    <li><code>c</code> counts the number of class, pseudo-class and attribute selectors</li>
+    <li><code>d</code> counts the number of element and pseudo-element selectors</li>
+  </ul>
+  <p>For example, the specificity of a rule with one ID selector, one class selector, and one element would be (0, 1, 1, 1).</p>
+</div>
