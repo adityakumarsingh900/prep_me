@@ -605,6 +605,14 @@ const topics = [
       'D: Dependency Inversion Principle'
     ],
     hasMore: true,
+  },
+  {
+    id: 'service_web_workers',
+    heading: 'Explain Service Workers and Web Workers',
+    content: [
+      'Service Workers: run in the background, intercept network requests, and cache resources.',
+      'Web Workers: run scripts in the background, allowing for long-running tasks without blocking the UI.',
+    ],
   }
 ];
 
