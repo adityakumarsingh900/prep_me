@@ -18,7 +18,7 @@ const colors = [
 // randomize topics array
 topics.sort(() => Math.random() - 0.5);
 const paginatedTopics = [];
-// devide topics into sub arrays. Each array cann have 12 topics.
+// devide topics into sub arrays. Each array cann have 7 topics.
 while (topics.length > 0) {
   paginatedTopics.push(topics.splice(0, 7));
 }
@@ -82,6 +82,10 @@ export default function Deck() {
         bottom: '10px',
         right: '10px',
       }} href='https://www.linkedin.com/in/aditya-kumar-singh-a8b584106/' target='_blank' rel='noreferrer' >#happycoding ❤️</a>
+      <span style={{
+        fontWeight: 'bold',
+        textShadow: '0 0 5px rgba(255, 255, 255, 0.7)',
+      }}>{currentDeck !== paginatedTopics.length-1 ? 'Fetching next 7 cards...' : 'Reloading'}</span>
       {props.map(({ x, y, rot, scale }, i) => (
         <animated.div className={styles.deck} key={i} style={{ x, y }}>
           {/* This is the card itself, we're binding our gesture to it (and inject its index so we know which is which) */}
